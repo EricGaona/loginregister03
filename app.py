@@ -16,10 +16,6 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
-# app.config["MONGO_DBNAME"] =  os.getenv("DBname") 
-# app.config["MONGO_URI"] = os.getenv("URLdirection")
-# app.secret_key = os.getenv("SECRET")
-
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET")
@@ -87,10 +83,10 @@ def logout():
     session.pop("user")
     return redirect(url_for("index"))
 
-if __name__ == "__main__":
-    app.run(host=os.environ.get('IP'),
-            port=int(os.environ.get('PORT')),
-            debug=False)
-    # lo de arriba es para que funcione en heroku lo de abajo para que funcione en local pero cuando cambiamos la ruta ya no funciona mas
 # if __name__ == "__main__":
-#     app.run()
+#     app.run(host=os.environ.get('IP'),
+#             port=int(os.environ.get('PORT')),
+#             debug=False)
+    # lo de arriba es para que funcione en heroku lo de abajo para que funcione en local pero cuando cambiamos la ruta ya no funciona mas
+if __name__ == "__main__":
+    app.run()
