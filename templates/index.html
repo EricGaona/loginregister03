@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content%}
+    <h1>Home: conectando git, github y heroku - 3</h1> 
+    {% if session.user %}
+    <h2 class="welcome">
+        Welcome {{ session.user.title() }}!
+    </h>
+    {% else %}
+    
+    <h2>registrate para agregar tu poema_ hola Martin</h2>
+
+    {% endif %}
+ 
+    {% for task in tasks %}
+    {{ task.task_name }}
+    {{ task.category_name }}
+    {{ task.Task_description }}
+    {{ task.is_urgent }}
+    {{ task.due_date }}
+
+{% endfor %}
+{% endblock %}
+   
