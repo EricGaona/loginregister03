@@ -83,10 +83,10 @@ def logout():
     session.pop("user")
     return redirect(url_for("index"))
 
-# if __name__ == "__main__":
-#     app.run(host=os.environ.get('IP'),
-#             port=int(os.environ.get('PORT')),
-#             debug=False)
-    # lo de arriba es para que funcione en heroku lo de abajo para que funcione en local pero cuando cambiamos la ruta ya no funciona mas
 if __name__ == "__main__":
-    app.run()
+    app.run(host=os.environ.get('IP'),
+            port=int(os.environ.get('PORT')),
+            debug=False)
+    # lo de arriba es para que funcione en heroku lo de abajo para que funcione en local pero cuando cambiamos la ruta ya no funciona mas
+# if __name__ == "__main__":
+#     app.run()
